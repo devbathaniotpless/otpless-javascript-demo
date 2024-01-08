@@ -19,6 +19,33 @@
 
     <!-- button to load otpless login page -->
     <button id="login-button">Login</button>
+
+    <script>
+      // function to open otpless loginPage as a moidal  
+      function openOtplessLoginPage() {
+        document.getElementById("otpless-login-modal").style.display = "flex";
+        var scriptElement = document.createElement("script");
+        scriptElement.type = "text/javascript";
+        scriptElement.src = "https://otpless.com/auth.js";
+      
+        document.getElementById("otpless-login-page").appendChild(scriptElement);
+      }
+      // function to close otplesslogin page
+      function closeOtplessLoginPage() {
+        document.getElementById("otpless-login-modal").style.display = "none";
+        document.getElementById("otpless-login-page").innerHTML = "";
+      }
+      // function for on click of button openOtplessLoginPage calls to load the page
+      function handleLoginButtonClick() {
+        openOtplessLoginPage();
+      }
+      // target button with id
+      var loginButton = document.getElementById("login-button");
+      loginButton.addEventListener("click", handleLoginButtonClick);
+      document.getElementById("otpless-login-modal").addEventListener("click", closeOtplessLoginPage);
+    
+     </script> 
+
       
       
 </body>
