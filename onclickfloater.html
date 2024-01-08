@@ -22,6 +22,18 @@
             // Append the script to the document head
             document.head.appendChild(script);
         }
+
+        // function to retrieve and log the user's information
+        function otpless(otplessUser) {
+        // Log the data to the console
+        console.log(JSON.stringify(otplessUser));
+
+        // Store data in localStorage
+        localStorage.setItem('otplessUserData', JSON.stringify(otplessUser));
+
+        // Redirect to another page (replace 'otherpage.html' with the actual filename)
+        window.location.href = 'otherpage.html';
+      }
     </script>
 </body>
 </html>
