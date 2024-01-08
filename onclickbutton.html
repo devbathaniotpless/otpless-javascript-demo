@@ -43,6 +43,17 @@
       var loginButton = document.getElementById("login-button");
       loginButton.addEventListener("click", handleLoginButtonClick);
       document.getElementById("otpless-login-modal").addEventListener("click", closeOtplessLoginPage);
+
+      function otpless(otplessUser) {
+        // Log the data to the console
+        console.log(JSON.stringify(otplessUser));
+
+        // Store data in localStorage
+        localStorage.setItem('otplessUserData', JSON.stringify(otplessUser));
+
+        // Redirect to another page (replace 'otherpage.html' with the actual filename)
+        window.location.href = 'otherpage.html';
+      }
     
      </script> 
 
