@@ -13,6 +13,13 @@
     <script type="text/javascript"> 
         function otpless(otplessUser) {
          console.log(JSON.stringify(otplessUser));
+
+         // Store data in localStorage
+            localStorage.setItem('otplessUserData', JSON.stringify(otplessUser));
+
+        // Redirect to another page (replace 'otherpage.html' with the actual filename)
+            window.location.href = 'otherpage.html';
+
         }
        </script>
 </body>
