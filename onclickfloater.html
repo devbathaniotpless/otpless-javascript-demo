@@ -8,5 +8,20 @@
 <body>
     <!-- create a button on click of that script loads -->
     <button onclick="loadScript()">Load Script</button>
+
+    <script>
+        function loadScript() {
+            // Create a new script element
+            const script = document.createElement('script');
+            
+            // Add OTPless Javascript script here from documentation
+            script.type = 'text/javascript';
+            script.src = 'https://otpless.com/auth.js';
+            script.setAttribute('cid', 'YOUR_CLIENTID'); // Replace 'YOUR_CLIENTID' with your actual client ID
+            
+            // Append the script to the document head
+            document.head.appendChild(script);
+        }
+    </script>
 </body>
 </html>
