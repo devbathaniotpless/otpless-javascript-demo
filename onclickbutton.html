@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://otpless.com/favicon.ico" />
     <title>otpless onclick button loginPage</title>
-    <!-- Add sdk for javascript to embed the sign in functionality where you want -->
-    <script type="text/javascript" src="https://otpless.com/auth.js" cid="YOUR_CID"></script>
 </head>
 <body>
-    
     <!-- A modal where otpless login page will load as a modal -->
     <div id="otpless-login-modal">
 
@@ -18,32 +16,37 @@
     </div>
 
     <!-- button to load otpless login page -->
-    <button id="login-button">Login</button>
+    <button type="button" id="login-button">Login</button>
 
     <script>
+      // target button & modal
+      const loginButton = document.getElementById("login-button");
+      const loginModal = document.getElementById("otpless-login-modal");
+
       // function to open otpless loginPage as a moidal  
       function openOtplessLoginPage() {
-        document.getElementById("otpless-login-modal").style.display = "flex";
-        var scriptElement = document.createElement("script");
+        loginModal.style.display = "flex";
+        const scriptElement = document.createElement("script");
         scriptElement.type = "text/javascript";
+        scriptElement.setAttribute("cid", "YOUR_CID_HERE") //Replace with your cid
         scriptElement.src = "https://otpless.com/auth.js";
       
         document.getElementById("otpless-login-page").appendChild(scriptElement);
+        loginButton.style.display = 'none';
       }
+
       // function to close otplesslogin page
       function closeOtplessLoginPage() {
-        document.getElementById("otpless-login-modal").style.display = "none";
-        document.getElementById("otpless-login-page").innerHTML = "";
+        loginModal.style.display = "none";
+        // document.getElementById("otpless-login-page").innerHTML = "";
+        loginButton.style.display="block";
       }
+
       // function for on click of button openOtplessLoginPage calls to load the page
       function handleLoginButtonClick() {
         openOtplessLoginPage();
       }
-      // target button with id
-      var loginButton = document.getElementById("login-button");
-      loginButton.addEventListener("click", handleLoginButtonClick);
-      document.getElementById("otpless-login-modal").addEventListener("click", closeOtplessLoginPage);
-
+      
       function otpless(otplessUser) {
         // Log the data to the console
         console.log(JSON.stringify(otplessUser));
@@ -54,10 +57,11 @@
         // Redirect to another page (replace 'otherpage.html' with the actual filename)
         window.location.href = 'otherpage.html';
       }
-    
-     </script> 
+      
+      // Adding Listeners
+      loginButton.addEventListener("click", handleLoginButtonClick);
+      loginModal.addEventListener("click", closeOtplessLoginPage);
+    </script> 
 
-      
-      
 </body>
 </html>
