@@ -76,9 +76,9 @@
 
 **Customization**
 
-    >You can further customize the behavior and appearance of the OTPless onclick button loginPage by modifying the provided HTML and JavaScript code.
-    >Adjust the styles of the modal and button to match your application's design.
-    >Customize the otpless function to meet your specific requirements for handling user data after login.
+    -You can further customize the behavior and appearance of the OTPless onclick button loginPage by modifying the provided HTML and JavaScript code.
+    -Adjust the styles of the modal and button to match your application's design.
+    -Customize the otpless function to meet your specific requirements for handling user data after login.
     
 ### Codes of Interest
 
