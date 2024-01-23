@@ -4,28 +4,82 @@
 
 ## Steps to add OTPless SDK to your Website
 
-1. **Add OTPLESS Sign in**
+1. **Copy the HTML code provided below into your project's HTML file.**
 
-    > Add the following code to your sign up/ sign in page where you want to embed your sign in functionality.
-
-    ```html
-    <div id="otpless-login-page"></div>
-    <script type="text/javascript" src="https://otpless.com/auth.js" cid="YOUR_CID_HERE"></script>
-    // Replace with your cid
-    ```
-
-2. **Retrieve User's Information**
-
-    > Implement the following function to retrive the **user data** upon successful authentication of the user.
+    > A modal where otpless login page will load as a modal.
 
     ```html
-    <script type="text/javascript">
-        function otpless(otplessUser) {
-            alert(JSON.stringify(otplessUser));
-        }
-    </script>
+    <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <!-- Include meta tags and title -->
+        </head>
+        <body>
+            <!-- A modal where otpless login page will load as a modal -->
+            <div id="otpless-login-modal">
+        
+              <!-- Add div to load otpless login page with id as given below  -->
+              <div id="otpless-login-page"></div>
+        
+            </div>
+
+            <!-- button to load otpless login page -->
+            <button type="button" id="login-button">Login</button>
+        
+            <script>
+              // JavaScript code provided in further steps
+            </script> 
+
+        </body>
+    </html>
+
     ```
 
+2. **Add this javascript code to open OTPless sign in page as a modal**
+
+   > function to open otpless loginPage as a moidal
+    ```html
+        function openOtplessLoginPage() {
+            loginModal.style.display = "flex";
+            const scriptElement = document.createElement("script");
+            scriptElement.type = "text/javascript";
+            scriptElement.setAttribute("cid", "YOUR_CID_HERE") //Replace with your cid
+            scriptElement.src = "https://otpless.com/auth.js";
+          
+            document.getElementById("otpless-login-page").appendChild(scriptElement);
+            loginButton.style.display = 'none';
+          }
+    ```
+
+3. **Add this javascript code to Close OTPless sign in page modal**
+
+   > function to close OTPless sign in page modal
+    ```html
+    function closeOtplessLoginPage() {
+        loginModal.style.display = "none";
+        // document.getElementById("otpless-login-page").innerHTML = "";
+        loginButton.style.display="block";
+      }
+    ```
+4. **Customize the otpless function to handle the user data after successful login. The provided example logs the data to the console, stores it in localStorage, and redirects to another page.**
+
+    > Implement the following javascript code to retrive the **user data** upon successful authentication of the user.
+
+    ```html
+    function otpless(otplessUser) {
+        // Customize handling of user data after successful login
+        console.log(JSON.stringify(otplessUser));
+        localStorage.setItem('otplessUserData', JSON.stringify(otplessUser));
+        window.location.href = 'otherpage.html'; // Replace with your desired redirection
+    }
+    ```
+
+**Customization**
+
+    >You can further customize the behavior and appearance of the OTPless onclick button loginPage by modifying the provided HTML and JavaScript code.
+    >Adjust the styles of the modal and button to match your application's design.
+    >Customize the otpless function to meet your specific requirements for handling user data after login.
+    
 ### Codes of Interest
 
 - [OTPless-login-page](onclickbutton.html#L14) - login page
