@@ -30,9 +30,9 @@
 
 - [OTPless-login-page](onclickbutton.html#L14) - login page
 - [OTPless-script](onclickbutton.html#L29) - script to integrate OTPless SDK
-- [OTPless-login-page](onclickbutton.html#L19) - button to open otpless login page as modal
-- [OTPless-login-page](onclickbutton.html#L27) - function to open otpless login page as modal
-- [OTPless-login-page](onclickbutton.html#L39) - function to close otpless login page modal
+- [Onclick-button](onclickbutton.html#L19) - button to open otpless login page as modal
+- [Open-modal-function](onclickbutton.html#L27) - function to open otpless login page as modal
+- [close-modal-function](onclickbutton.html#L39) - function to close otpless login page modal
 - [Callback function](onclickbutton.html#L50) - callback function to retrieve user data
 
 > Received User Data Format
