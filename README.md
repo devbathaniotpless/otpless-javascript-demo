@@ -44,7 +44,7 @@
             loginModal.style.display = "flex";
             const scriptElement = document.createElement("script");
             scriptElement.type = "text/javascript";
-            scriptElement.setAttribute("data-appid", "YOUR_APPID_HERE") //Replace with your cid
+            scriptElement.setAttribute("data-appid", "YOUR_APPID_HERE") //Replace with your appid
             scriptElement.src = "https://otpless.com/auth.js";
           
             document.getElementById("otpless-login-page").appendChild(scriptElement);
