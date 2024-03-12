@@ -3,18 +3,19 @@
 # Javascript Demo
 
 ## Steps to add OTPless SDK to your Website
+1. **Create an App in [OTPless dashboard](https://otpless.com/dashboard/app) and copy the APP ID**
 
-1. **Add OTPLESS Sign in**
+2. **Add OTPLESS Sign in**
 
     > Add the following code to your sign up/ sign in page where you want to embed your sign in functionality.
 
     ```html
     
-    <script type="text/javascript" src="https://otpless.com/auth.js" cid="YOUR_CID_HERE"></script>
-    // Replace with your cid
+    <script type="text/javascript" src="https://otpless.com/auth.js" data-appid="YOUR_APP_ID"></script>
+    // Replace with your app id
     ```
 
-2. **Retrieve User's Information**
+3. **Retrieve User's Information**
 
     > Implement the following function to retrive the **user data** upon successful authentication of the user.
 
