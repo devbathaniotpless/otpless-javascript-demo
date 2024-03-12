@@ -51,7 +51,7 @@
 }
 ```
 ## Usage
-> Prerequisites
+> Prerequisites **Any Code Editor**
   - Clone this repository
   - Open the code in any code editorand run on localhost
   - Switch branches to check out available options to integrate OTPless SDK in your project.
