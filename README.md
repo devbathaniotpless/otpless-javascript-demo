@@ -4,7 +4,8 @@
 
 ## Steps to add OTPless SDK to your Website
 
-1. **Copy the HTML code provided below into your project's HTML file.**
+1. **Create an App in [OTPless dashboard](https://otpless.com/dashboard/app) and copy the APP ID**
+2. **Copy the HTML code provided below into your project's HTML file.**
 
     > A modal where otpless login page will load as a modal.
 
@@ -35,7 +36,7 @@
 
     ```
 
-2. **Add this javascript code to open OTPless sign in page as a modal**
+3. **Add this javascript code to open OTPless sign in page as a modal**
 
    > function to open otpless loginPage as a moidal
     ```html
@@ -43,7 +44,7 @@
             loginModal.style.display = "flex";
             const scriptElement = document.createElement("script");
             scriptElement.type = "text/javascript";
-            scriptElement.setAttribute("cid", "YOUR_CID_HERE") //Replace with your cid
+            scriptElement.setAttribute("data-appid", "YOUR_APPID_HERE") //Replace with your cid
             scriptElement.src = "https://otpless.com/auth.js";
           
             document.getElementById("otpless-login-page").appendChild(scriptElement);
@@ -51,7 +52,7 @@
           }
     ```
 
-3. **Add this javascript code to Close OTPless sign in page modal**
+4. **Add this javascript code to Close OTPless sign in page modal**
 
    > function to close OTPless sign in page modal
     ```html
